@@ -1,10 +1,10 @@
 import ChangeLang from "@/utils/ChangeLang";
-import VerifyEmailForm from "@/components/auth/verifyEmailForm";
 import UseLangDetection from "@/hooks/UseLangDetection";
 import { Back } from "@/images/svg";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
+import VerifyEmailForm from "@/components/auth/VerifyEmailForm";
 
 const VerifyEmail = () => {
   const langDetection = UseLangDetection();
