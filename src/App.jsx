@@ -22,7 +22,7 @@ import Notifications from "./pages/Notifications";
 import Packages from "./pages/Packages/Packages";
 import PackagesDetails from "./pages/Packages/PackagesDetails";
 import Profile from "./pages/user/Profile";
-import ContactUs from "./pages/policies/Contactus";
+import ContactUs from "./pages/policies/ContactUs";
 
 const router = createBrowserRouter([
   {
