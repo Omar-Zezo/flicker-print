@@ -1,7 +1,7 @@
 import { t } from "i18next";
 import React from "react";
-import Item from "./item";
 import Spiner from "@/utils/Spiner";
+import Item from "./Item";
 
 const Items = ({ products, loaderStatus }) => {
   return (

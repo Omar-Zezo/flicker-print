@@ -6,10 +6,10 @@ import RatingStars from "@/utils/RatingStars";
 import RatingBars from "@/utils/RatingsBar";
 import UserReview from "@/utils/UserReview";
 import ProductImgsGallery from "@/utils/ProductImgsGallery";
-import Items from "./Items";
 import UseFetchPackage from "@/hooks/UseFetchPackage";
 import SimilarItems from "./SimilarItems";
 import Feedback from "../product/Feedback";
+import Items from "./Items";
 
 const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
   const [qty, setQty] = useState(1);
