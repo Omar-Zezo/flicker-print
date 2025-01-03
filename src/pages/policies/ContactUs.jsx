@@ -1,7 +1,7 @@
 import Navigation from "@/utils/Navigation";
 import UseLangDetection from "@/hooks/UseLangDetection";
 import Header from "@/utils/Header";
-import ContactUsContainer from "@/components/contactUs/contactUsContainer";
+import ContactUsContainer from "@/components/contactUs/ContactUsContainer";
 
 
 const ContactUs = () => {
