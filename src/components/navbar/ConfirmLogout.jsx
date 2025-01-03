@@ -4,6 +4,7 @@ import Button from '@/utils/Button'
 import { t } from 'i18next';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const ConfirmLogout = ({setConfirmLogout, langDetection}) => {
 
@@ -13,13 +14,15 @@ const ConfirmLogout = ({setConfirmLogout, langDetection}) => {
     const handelLogout = () => {
       dispatch(logoutUser());
     };
+
+    const navigate = useNavigate()
   
     useEffect(() => {
       if (logoutData) {
         if (logoutData.data) {
           if (logoutData.data.status === 200) {
-            localStorage.clear();
-            window.location.reload();
+            localStorage.removeItem("token");
+            window.location.reload()
           }
         }
       }
@@ -41,12 +44,12 @@ const ConfirmLogout = ({setConfirmLogout, langDetection}) => {
             <p className='w-[70%] mx-auto text-xl text-center text-black-500 font-semibold'>{t('are you sure you want to Log Out?')}</p>
             <div className='flex justify-center gap-5'>
                 <div className='w-[155px] h-10' onClick={handelLogout}>
-                    <Button text={t('logout')} bg="bg-[#D90202]" txtColor="text-white"/>
+                    <Button txtSize="text-sm" text={t('logout')} bg="bg-[#D90202]" txtColor="text-white"/>
                 </div>
                 <div className='w-[155px] h-10'
                 onClick={()=> setConfirmLogout(false)}
                 >
-                    <Button text={t("cancel")} txtColor="text-[#D90202]" border={true} borderColor="border-[#D90202]"/>
+                    <Button txtSize="text-sm" text={t("cancel")} txtColor="text-[#D90202]" border={true} borderColor="border-[#D90202]"/>
                 </div>
             </div>
             </div>

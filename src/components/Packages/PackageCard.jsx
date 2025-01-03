@@ -46,6 +46,7 @@ const PackageCard = () => {
         </p>
         <div className="w-[180px] h-[60px]">
           <Button
+            txtSize="text-base"
             text={"Add To Card"}
             bg={"bg-blue-500"}
             txtColor="text-white"

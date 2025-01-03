@@ -49,6 +49,19 @@ body {
 }
 }
 
+.title-line-center{
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85px;
+    height: 4px;
+    background-color: #93C83D;
+  }
+  }
+
 .trend-title-line{
   &::after{
     content: "";
@@ -66,6 +79,8 @@ body {
 .gredient-blue{
   background: linear-gradient(to right, rgba(0,18,11,0.7) 70%, rgba(75, 234, 255, 0.5) 100%);
 }
+
+
 
 /* start slider styles */
 .home-slider{

@@ -6,7 +6,7 @@ import UseLangDetection from "@/hooks/UseLangDetection"
 import FeaturedCategoriesHome from "@/components/Home/FeaturedCategoriesHome"
 import BusinessCategoriesHome from "@/components/Home/BusinessCategoriesHome"
 import BestPackagesContainer from "@/components/Home/BestPackagesContainer"
-import Answers from "@/components/Home/Answers"
+import Answers from "@/utils/Answers"
 
 
 const Home = () => {

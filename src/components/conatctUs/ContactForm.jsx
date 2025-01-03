@@ -144,7 +144,7 @@ const [btnLoaderStatus, setBtnLoaderStatus] = useState(false);
         </p>
         </div>
         <button
-          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
+          className="w-full h-[70px] mb-[32px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
           type="submit"
           disabled={btnLoaderStatus}
         >

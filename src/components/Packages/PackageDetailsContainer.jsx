@@ -22,6 +22,19 @@ const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
     <div className="container mx-auto flex flex-col gap-20">
       <div className="flex justify-between">
         <div className="w-[49%] h-fit">
+        {package_details?.discount_percentage > 0 && (
+            <div className="bg-green-500 text-white text-sm font-semibold absolute right-0 top-0 z-10 p-[10px] rounded-tr-[20px] rounded-bl-[6px]">
+              {package_details?.discount_percentage}% OFF
+            </div>
+          )}
+          {package_details?.is_need_design && (
+            <div className="bg-black/5 text-white text-sm flex items-center gap-2 font-semibold absolute left-5 top-5 z-10 p-[10px] rounded-[10px]">
+              <img src={WarningImg} alt="alert" width={24} height={24} />
+              <p className="text-base text-black-400 font-medium">
+                It's designable
+              </p>
+            </div>
+          )}
           <ProductImgsGallery photo_gallery={package_details?.images}/>
         </div>
         <div className="bg-white w-[49%]">
@@ -62,7 +75,7 @@ const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
                       {t("piece")})
                     </p>
                   </div>
-                  <div className="relative w-[242px] flex justify-between items-center h-[70px] px-2 bg-section-gray rounded-full">
+                  <div className="relative w-[242px] flex justify-between items-center p-[15px] bg-section-gray rounded-full">
                     <div className="flex justify-center items-center cursor-pointer size-10 bg-white rounded-full">
                       <img
                         className={`${
@@ -99,6 +112,7 @@ const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
                   </div>
                   <div className="w-[180px] h-[56px]">
                     <Button
+                      txtSize="text-base"
                       bg="bg-blue-500"
                       text={t("add to cart")}
                       txtColor="text-white"

@@ -1,12 +1,21 @@
 import { navLinks } from "@/constant";
 import { Group14 } from "@/images/imgs";
 import { Cart } from "@/images/svg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import ChangeLang from "@/utils/ChangeLang";
 import { t } from "i18next";
+import UseGetLoggedUser from "@/hooks/UseGetLoggedUser";
+import { toast } from "react-toastify";
 
 const Navbar = ({ langDetection }) => {
+
+  const { isAuth } = UseGetLoggedUser();
+
+  const navigate = useNavigate();
+  const errorMsg = (msg) => toast.error(msg);
+
+
   return (
     <nav
       className={`container absolute top-0 left-[50%] translate-x-[-50%] z-50 ${
@@ -33,12 +42,13 @@ const Navbar = ({ langDetection }) => {
           ))}
         </ul>
         <div className="flex gap-5 items-center">
-          <div>
+          <Link to="/cart">
             <img width={24} height={24} src={Cart} alt="cart" />
-          </div>
+          </Link>
           <div className="flex items-center gap-2">
             <div className="w-[107px] h-12">
               <Button
+                txtSize="text-base"
                 text={t("login-nav")}
                 bg="bg-blue-500"
                 txtColor="text-white"
@@ -47,6 +57,7 @@ const Navbar = ({ langDetection }) => {
             </div>
             <div className="w-[107px] h-12">
               <Button
+                txtSize="text-base"
                 text={t("signup-nav")}
                 txtColor="text-white"
                 link="/auth/select-account-type"

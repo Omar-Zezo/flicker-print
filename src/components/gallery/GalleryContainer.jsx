@@ -1,28 +1,32 @@
-import { useSelector } from "react-redux";
 import { t } from "i18next";
 import Spiner from "@/utils/Spiner";
-import { getGalleryPhoto } from "@/store/slices/gallery/photo-gallery";
 import GalleryCard from "./GalleryCard";
 import Pagination from "@/utils/Pagination";
-import UseFetchData from "@/hooks/UseFetchData";
 import { Empty } from "@/images/svg";
 import { useState } from "react";
+import UseFetchGalleryPhotos from "@/hooks/UseFetchGalleryPhotos";
 import ViewItem from "./ViewItem";
 
 const GalleryContainer = () => {
-  const [showGalleryItem, setShowGalleryItem] = useState(true);
-  const { data } = useSelector((state) => state.galleryPhoto);
+  const [showGalleryItem, setShowGalleryItem] = useState(false);
+  const [itemToView, setItemToView] = useState(null)
   const { fetchedData, loaderStatus, current_page, total, handlePageClick } =
-    UseFetchData(data, getGalleryPhoto);
+  UseFetchGalleryPhotos();
+
+  const getItemToView = (item)=>{
+    setItemToView(item)
+  }
 
   return (
     <div className="flex flex-col gap-5">
-      <div className="w-full flex justify-center flex-wrap gap-5 mb-8">
-        {/* {loaderStatus ? (
+      <div className="w-full flex  flex-wrap gap-5 mb-8">
+        {loaderStatus ? (
           <Spiner />
         ) : fetchedData?.length > 0 ? (
-          fetchedData.map((photo) => (
-            <GalleryCard key={photo.id} photo={photo} />
+          fetchedData.map((itemData) => (
+            <>
+            <GalleryCard key={itemData.id} getItemToView={getItemToView} itemData={itemData} showGalleryItem={showGalleryItem} setShowGalleryItem={setShowGalleryItem}/>
+            </>
           ))
         ) : (
           <div className="flex flex-col mx-auto gap-[9px] mt-10">
@@ -31,19 +35,14 @@ const GalleryContainer = () => {
               {t("no gallery")}
             </p>
           </div>
-        )} */}
-            <GalleryCard  setShowGalleryItem={setShowGalleryItem}/>
-            <GalleryCard  setShowGalleryItem={setShowGalleryItem}/>
-            <GalleryCard  setShowGalleryItem={setShowGalleryItem}/>
-            <GalleryCard  setShowGalleryItem={setShowGalleryItem}/>
-
+        )}
       </div>
       <Pagination
         current_page={current_page}
         total={total}
         handlePageClick={handlePageClick}
       />
-      {showGalleryItem && <ViewItem setShowGalleryItem={setShowGalleryItem}/>}
+    {showGalleryItem && <ViewItem itemToView={itemToView} setShowGalleryItem={setShowGalleryItem}/>}
     </div>
   );
 };

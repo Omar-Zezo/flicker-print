@@ -23,6 +23,7 @@ const {products, loaderStatus} = UseFetchSpecialProducts(data, getSpecialProduct
             txtColor={"text-white"}
             link={""}
             arrow={true}
+            txtSize="text-base"
           />
         </div>
       </div>

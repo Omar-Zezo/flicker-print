@@ -40,6 +40,7 @@ const HeaderHome = ({ langDetection }) => {
                 bg="bg-blue-500"
                 txtColor="text-white"
                 arrow={true}
+                txtSize="text-base"
               />
             </div>
             <div className="flex gap-5 mt-10">

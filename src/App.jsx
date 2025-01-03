@@ -23,6 +23,8 @@ import Packages from "./pages/Packages/Packages";
 import PackagesDetails from "./pages/Packages/PackagesDetails";
 import Profile from "./pages/user/Profile";
 import ContactUs from "./pages/policies/ContactUs";
+import AboutUs from "./pages/policies/AboutUs";
+import Cart from "./pages/order/Cart";
 
 const router = createBrowserRouter([
   {
@@ -88,7 +90,15 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs/>
-      }
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs/>
+      },
+      {
+        path: "/cart",
+        element: <Cart/>
+      },
     ]
   },
   {

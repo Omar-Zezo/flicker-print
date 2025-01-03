@@ -1,7 +1,7 @@
 import Navigation from "@/utils/Navigation";
 import UseLangDetection from "@/hooks/UseLangDetection";
 import Header from "@/utils/Header";
-import Answers from "@/components/Home/Answers";
+import Answers from "@/utils/Answers";
 
 const FAQ = () => {
   const langDetection = UseLangDetection();

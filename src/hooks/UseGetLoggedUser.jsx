@@ -12,6 +12,12 @@ const UseGetLoggedUser = () => {
     dispatch(getLoggedUser());
   }, []);
 
+  useEffect(()=>{
+    if(!localStorage.getItem("token")){
+      setIsAuth(null)
+    }
+  },[localStorage.getItem("token")])
+
   useEffect(() => {
     if (data) {
       if (data.data) {
@@ -25,7 +31,7 @@ const UseGetLoggedUser = () => {
     }
   }, [data]);
 
-  return {isAuth, loggedUserData}
+  return {isAuth, setIsAuth, loggedUserData}
 };
 
 export default UseGetLoggedUser;

@@ -42,6 +42,7 @@ const Feedback = ({ setShowFeedback, langDetection }) => {
                 onClick={() => setShowFeedback(false)}
               >
                 <Button
+                  txtSize="text-sm"
                   text={t("cancel")}
                   txtColor="text-blue-500"
                   border={true}
@@ -50,6 +51,7 @@ const Feedback = ({ setShowFeedback, langDetection }) => {
               </div>
               <div className="w-[214px] h-[46px]">
                 <Button
+                  txtSize="text-sm"
                   text={t("submit")}
                   bg="bg-blue-500"
                   txtColor="text-white"

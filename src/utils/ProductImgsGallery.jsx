@@ -16,6 +16,7 @@ const ProductImgsGallery = ({ photo_gallery }) => {
       showFullscreenButton={false}
       showPlayButton={false}
       slideDuration={300}
+      disableThumbnailScroll={true}
     />
     ):null
   )

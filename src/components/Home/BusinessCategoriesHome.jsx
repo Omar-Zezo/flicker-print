@@ -20,6 +20,7 @@ const BusinessCategoriesHome = ({langDetection}) => {
             txtColor={"text-white"}
             link={""}
             arrow={true}
+            txtSize="text-base"
           />
         </div>
       </div>

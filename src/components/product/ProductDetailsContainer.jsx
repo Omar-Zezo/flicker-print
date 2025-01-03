@@ -1,4 +1,4 @@
-import { Minus, PlusBlack, SelectArrow } from "@/images/svg";
+import { Minus, PlusBlack, SelectArrow, WarningImg } from "@/images/svg";
 import Button from "@/utils/Button";
 import { useState } from "react";
 import { t } from "i18next";
@@ -24,10 +24,25 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
     photo_gallery,
   } = UseFetchProductData(getProductName);
 
+  console.log(product);
+
   return (
     <div className="container mx-auto flex flex-col gap-20">
       <div className="flex justify-between">
-        <div className="w-[49%] h-fit">
+        <div className="w-[49%] h-fit relative">
+          {product?.discount_percentage > 0 && (
+            <div className="bg-green-500 text-white text-sm font-semibold absolute right-0 top-0 z-10 p-[10px] rounded-tr-[20px] rounded-bl-[6px]">
+              {product?.discount_percentage}% OFF
+            </div>
+          )}
+          {product?.is_need_design && (
+            <div className="bg-black/5 text-white text-sm flex items-center gap-2 font-semibold absolute left-5 top-5 z-10 p-[10px] rounded-[10px]">
+              <img src={WarningImg} alt="alert" width={24} height={24} />
+              <p className="text-base text-black-400 font-medium">
+                It's designable
+              </p>
+            </div>
+          )}
           <ProductImgsGallery photo_gallery={photo_gallery} />
         </div>
         <div className="bg-white w-[49%]">
@@ -125,7 +140,7 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
                   <h3 className="text-black-500 text-xl font-medium">
                     {t("material")}
                   </h3>
-                  <div className="rounded-[18px] h-[70px] bg-[#FBFEFF] relative">
+                  <div className="rounded-[18px] py-[23px] px-5 bg-[#FBFEFF] relative">
                     <select className="text-black-400 px-5 size-full bg-transparent cursor-pointer font-medium text-base outline-none border-[#00000033]">
                       <option className="text-base text-black-400 font-medium">
                         Ceramic
@@ -157,7 +172,7 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
                       </p>
                     )}
                   </div>
-                  <div className="relative w-[242px] flex justify-between items-center h-[70px] px-2 bg-section-gray rounded-full">
+                  <div className="relative w-[242px] flex justify-between items-center p-[15px] bg-section-gray rounded-full">
                     <div className="flex justify-center items-center cursor-pointer size-10 bg-white rounded-full">
                       <img
                         className={`${
@@ -203,6 +218,7 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
                   </div>
                   <div className="w-[180px] h-[56px]">
                     <Button
+                      txtsize="text-base"
                       bg="bg-blue-500"
                       text={t("add to cart")}
                       txtColor="text-white"

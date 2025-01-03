@@ -22,6 +22,11 @@ import Package1 from "./package-1.png"
 import Package2 from "./package-2.png"
 import Visa from "./visa.png"
 import MasterCard from "./mastercard.png"
+import Slide4 from "./slide-4.jpg"
+import AboutUsImg from "./about-us.jpg"
+import OurProduct from "./our-product.jpg";
+import CartImg from "./cart-product.png";
+
 
 
 export{
@@ -38,6 +43,7 @@ export{
     Slide1,
     Slide2,
     Slide3,
+    Slide4,
     BackgroundPattern,
     B2c,
     B2b,
@@ -48,5 +54,8 @@ export{
     Package2,
     Visa,
     MasterCard,
-    Group14Black
+    Group14Black,
+    AboutUsImg,
+    OurProduct,
+    CartImg
 }

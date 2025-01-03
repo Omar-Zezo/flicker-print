@@ -13,6 +13,7 @@ const SimilarItems = ({langDetection, similarProducts, loaderStatus}) => {
         </h2>
         <div className="w-[220px] h-[56px]">
           <Button
+            txtSize="text-base"
             text={t('view All Products')}
             bg={"bg-blue-500"}
             txtColor={"text-white"}

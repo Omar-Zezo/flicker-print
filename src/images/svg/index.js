@@ -23,6 +23,7 @@ import ArrowRight from "./arrow-right.svg";
 import ArrowRightBlue from "./arrow-right-blue.svg";
 import XBlue from "./x-blue.svg";
 import X from "./x.svg";
+import XWhite from "./x-white.svg";
 import Plus from "./plus.svg";
 import PlusBlack from "./plus-black.svg";
 import MinusWhite from "./minus-white.svg";
@@ -39,6 +40,13 @@ import PaymentChecke from "./payment-check-1.svg";
 import E_Mail from "./e-mail.svg";
 import Phone1 from "./phone.svg";
 import Location2 from "./location-2.svg";
+import Technology from "./technology 1.svg";
+import Speedometer from "./speedometer 1.svg";
+import TeamLeader from "./team-leader 1.svg";
+import Ellipse4 from "./Ellipse 4.svg";
+import ImgUpload from "./image-upload.svg";
+import WarningImg from "./warning.svg";
+import CouponImg from "./coupon 1.svg";
 
 
 export {
@@ -63,6 +71,7 @@ export {
   Logout,
   ArrowLeft,
   X,
+  XWhite,
   XBlue,
   Plus,
   PlusBlack,
@@ -82,5 +91,12 @@ export {
   UserBlack,
   E_Mail,
   Phone1,
-  Location2
+  Location2,
+  Technology,
+  Speedometer,
+  TeamLeader,
+  Ellipse4,
+  ImgUpload,
+  WarningImg,
+  CouponImg
 };

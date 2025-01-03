@@ -6,12 +6,12 @@ import LoginForm from "@/components/auth/LoginForm";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import UseGetLoggedUser from "@/hooks/UseGetLoggedUser";
+import { t } from "i18next";
 
 const Login = () => {
 const langDetection = UseLangDetection()
 const {isAuth} = UseGetLoggedUser()
 
-const { t } = useTranslation();
 const navigate = useNavigate()
 
 useEffect(()=>{
