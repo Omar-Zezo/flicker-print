@@ -1,5 +1,5 @@
 import { E_Mail, Location2, Phone1 } from "@/images/svg";
-import ContactForm from "@/components/conatctUs/ContactForm";
+import ContactForm from "@/components/contactUs/ContactForm";
 import { t } from "i18next";
 import UseGetSettings from "@/hooks/UseGetSettings";
 
