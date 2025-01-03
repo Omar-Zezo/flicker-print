@@ -2,7 +2,7 @@ import Navigation from "@/utils/Navigation";
 import UseLangDetection from "@/hooks/UseLangDetection";
 import Header from "@/utils/Header";
 import Statistics from "@/components/AboutUs/Statistics";
-\import ContactUsContainer from "@/components/conatctUs/ContactUsContainer";
+import ContactUsContainer from "@/components/conatctUs/ContactUsContainer";
 import Answers from "@/utils/Answers";
 import WhyUs from "@/components/AboutUs/WhyUs";
 import OurProducts from "@/components/AboutUs/OurProducts";
