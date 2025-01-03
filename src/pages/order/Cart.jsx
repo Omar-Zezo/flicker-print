@@ -1,5 +1,5 @@
 import CartDetails from "@/components/cart/CartDetails";
-import CartItem from "@/components/cart/cartItem";
+import CartItem from "@/components/cart/CartItem";
 import UseLangDetection from "@/hooks/UseLangDetection";
 import Button from "@/utils/Button";
 import Navigation from "@/utils/Navigation";
