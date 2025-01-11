@@ -21,10 +21,17 @@ import ProductDetails from "./pages/ProductDetails";
 import Notifications from "./pages/Notifications";
 import Packages from "./pages/Packages/Packages";
 import PackagesDetails from "./pages/Packages/PackagesDetails";
-import Profile from "./pages/user/Profile";
 import ContactUs from "./pages/policies/ContactUs";
 import AboutUs from "./pages/policies/AboutUs";
 import Cart from "./pages/order/Cart";
+import Checkout from "./pages/order/Checkout";
+import OrderDetails from "./pages/order/OrderDetails";
+import ProductDesignStatus from "./pages/order/ProductDesignStatus";
+import GeneralSettings from "./pages/profile/GeneralSettings";
+import ProfileLayout from "./pages/profile/ProfileLayout";
+import MyAddress from "./pages/profile/MyAddress";
+import OrderHistory from "./pages/profile/OrderHistory";
+import TrackOrder from "./pages/profile/TrackOrder";
 
 const router = createBrowserRouter([
   {
@@ -84,10 +91,6 @@ const router = createBrowserRouter([
         element: <PackagesDetails/>
       },
       {
-        path: "/profile",
-        element: <Profile/>
-      },
-      {
         path: "/contact-us",
         element: <ContactUs/>
       },
@@ -98,6 +101,22 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart/>
+      },
+      {
+        path: "/checkout",
+        element: <Checkout/>
+      },
+      {
+        path: "/track-order",
+        element: <TrackOrder/>
+      },
+      {
+        path: "/order-details",
+        element: <OrderDetails/>
+      },
+      {
+        path: "/product-status",
+        element: <ProductDesignStatus/>
       },
     ]
   },
@@ -132,6 +151,28 @@ const router = createBrowserRouter([
       {
         path: "select-account-type",
         element: <SelectAccountType/>
+      }
+    ]
+  },
+  {
+    Component: ProfileLayout,
+    path: "/my-profile",
+    children: [
+      {
+        index: true,
+        element: <GeneralSettings/>
+      },
+      {
+        path: "my-address",
+        element: <MyAddress/>
+      },
+      {
+        path: "order-history",
+        element: <OrderHistory/>
+      },
+      {
+        path: "track-order",
+        element: <TrackOrder/>
       },
     ]
   }

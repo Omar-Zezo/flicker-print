@@ -14,7 +14,7 @@ const OurGallery = () => {
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
       <Header title="our Gallery" />
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation current="our Gallery"/>
         <GalleryContainer/>
       </div>

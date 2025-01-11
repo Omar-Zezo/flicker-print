@@ -10,6 +10,9 @@ import UseFetchPackage from "@/hooks/UseFetchPackage";
 import SimilarItems from "./SimilarItems";
 import Feedback from "../product/Feedback";
 import Items from "./Items";
+import { addToCart } from "@/constant";
+import { toast } from "react-toastify";
+
 
 const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
   const [qty, setQty] = useState(1);
@@ -17,6 +20,11 @@ const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
 
   const { package_details, products, loaderStatus, rates, usersReviews, similarPackages } =
     UseFetchPackage(getPackagetName);
+
+  const successMsg = (msg) => toast.success(msg);
+
+  console.log(package_details)
+
 
   return (
     <div className="container mx-auto flex flex-col gap-20">
@@ -110,7 +118,22 @@ const PackageDetailsContainer = ({ langDetection, getPackagetName }) => {
                       ${package_details?.price}
                     </p>
                   </div>
-                  <div className="w-[180px] h-[56px]">
+                  <div className="w-[180px] h-[56px]"
+                  onClick={()=> {
+                    addToCart({
+                      item_id: package_details.id,
+                      name: package_details.name,
+                      image: package_details.image,
+                      price: package_details.price,
+                      qty: qty,
+                      type: "package",
+                      images: package_details.images,
+                      products: products,
+                      is_need_design: package_details?.is_need_design
+                    })
+                    successMsg(t("package has been added successfully"))
+                  }}
+                  >
                     <Button
                       txtSize="text-base"
                       bg="bg-blue-500"

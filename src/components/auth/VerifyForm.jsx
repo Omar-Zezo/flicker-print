@@ -70,7 +70,7 @@ const VerifyForm = () => {
         {[...Array(6)].map((_, i) => (
           <input
             key={i}
-            className={`otp-input w-[83px] h-[100px] text-center text-2xl text-black-500 rounded-[27px] border border-gray-50 ${
+            className={`otp-input w-1/6 h-[100px] max-md:h-[70px] text-center text-2xl text-black-500 rounded-[20px] border border-gray-50 ${
               errors[`input${i + 1}`] ? "border-red-600 " : "border-gray-50"
             }`}
             type="text"
@@ -84,7 +84,7 @@ const VerifyForm = () => {
       </div>
       <div>
         <button
-          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
+          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl max-md:text-base font-medium text-white bg-blue-500 duration-300 cursor-pointer"
           type="submit"
           disabled={btnLoaderStatus}
         >

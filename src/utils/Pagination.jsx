@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 const Pagination = ({current_page, total, handlePageClick}) => {
 
   return (
-    <div className={`${Math.ceil(total / 15) > 1 ? "block" : "hidden"}`}>
+    <div className={` mb-5 ${Math.ceil(total / 15) > 1 ? "block" : "hidden"}`}>
     <ReactPaginate
       breakLabel="..."
       nextLabel={t('next')}

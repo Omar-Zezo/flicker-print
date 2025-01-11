@@ -38,7 +38,7 @@ const Footer = ({ langDetection }) => {
         alt="pattern-bg"
         className="absolute left-0 top-0 size-full object-cover bg-blend-darken"
       />
-      <div className="w-[90%] mx-auto flex flex-col items-center gap-[60px]">
+      <div className="container flex flex-col items-center gap-[60px]">
         <div className="w-full">
           <img width={213} height={35} src={Group13} alt="logo-footer" />
         </div>

@@ -27,7 +27,7 @@ const ProductsContainer = ({ categories_ids, priceRange, mainCategoryId }) => {
 
   return (
     <>
-      <div className="flex gap-2 flex-wrap">
+      <div className="w-full flex gap-2 flex-wrap">
         {loaderStatus ? (
           <Spiner />
         ) : fetchedData?.length > 0 ? (

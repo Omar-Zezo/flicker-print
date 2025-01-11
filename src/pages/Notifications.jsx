@@ -14,7 +14,7 @@ const Notifications = () => {
       }`}
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
-      <div className="container pt-[112px] flex flex-col gap-8 mx-auto">
+      <div className="container pt-[112px] flex flex-col gap-8">
         <Navigation current={"notifications"} />
         <div className="w-full mx-auto flex flex-col gap-20">
           <div className="flex justify-between items-center">

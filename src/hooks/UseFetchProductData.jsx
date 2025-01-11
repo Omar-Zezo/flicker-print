@@ -9,6 +9,7 @@ const UseFetchProductData = (getProductName) => {
   const [similarProducts, setSimilarProducts] = useState(null);
   const [usersReviews, setUsersReviews] = useState(null);
   const [product, setProduct] = useState(null);
+  const [attributes, setAttributes] = useState(null);
   const [photo_gallery, setPhoto_gallery] = useState();
   const { data } = useSelector((state) => state.productDetails);
   const dispatch = useDispatch();
@@ -23,6 +24,9 @@ const UseFetchProductData = (getProductName) => {
     if (data) {
       if (data.data) {
         if (data.data.data) {
+          if(data.data.data.attributes){
+            setAttributes(data.data.data.attributes)
+          }
           if(data.data.data.photo_gallery){
             setPhoto_gallery(data.data.data.photo_gallery)
           }
@@ -47,7 +51,7 @@ const UseFetchProductData = (getProductName) => {
     }
   }, [data]);
 
-  return { rates, similarProducts, usersReviews, product, loaderStatus, photo_gallery };
+  return { rates, similarProducts, usersReviews, product, attributes, loaderStatus, photo_gallery };
 };
 
 export default UseFetchProductData;

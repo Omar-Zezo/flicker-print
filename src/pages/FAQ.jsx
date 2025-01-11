@@ -14,11 +14,9 @@ const FAQ = () => {
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
       <Header title="fAQs"/>
-      <div className="container flex flex-col gap-10 mx-auto">
+      <div className="container flex flex-col gap-10">
         <Navigation current="fAQs"/>
-        <div className="container mx-auto">
         <Answers/>
-        </div>
       </div>
     </div>
   );

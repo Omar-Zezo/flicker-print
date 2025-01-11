@@ -16,13 +16,13 @@ const Answers = () => {
 
   return (
     <div
-      className="w-[1200px] mx-auto flex flex-col items-center gap-16"
+      className="flex flex-col items-center gap-16"
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
-      <h3 className="w-[30%] text-center text-[32px] text-black-500 font-semibold">
+      <h3 className="w-[30%] max-md:w-1/2 text-center text-[32px] max-md:text-base text-black-500 font-semibold pb-1 relative answer-line">
         {t("got Questions?")}
       </h3>
-      <div className="container mt-8">
+      <div className="container">
         <ul className="questions-list">
           {loaderStatus ? (
             <Spiner />
@@ -38,9 +38,7 @@ const Answers = () => {
               />
             ))
           ) : (
-            <p className="w-full text-xl text-center text-black-500">
-              {t("no categories")}
-            </p>
+            null
           )}
         </ul>
       </div>

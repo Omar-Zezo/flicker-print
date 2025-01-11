@@ -1,5 +1,5 @@
 import { E_Mail, Location2, Phone1 } from "@/images/svg";
-import ContactForm from "@/components/contactUs/ContactForm";
+import ContactForm from "@/components/conatctUs/ContactForm";
 import { t } from "i18next";
 import UseGetSettings from "@/hooks/UseGetSettings";
 
@@ -80,8 +80,8 @@ const ContactUsContainer = ({lang}) => {
         ></iframe>
       </div>
     </div>
-    <div className="w-fit flex flex-col rounded-[32px] gap-10 border-2 border-section-gray bg-section-gray">
-      <div className="flex flex-col items-center p-[32px] gap-[32px] w-[70%] mx-auto">
+    <div className="w-fit flex flex-col rounded-[32px] p-[32px] gap-10 border-2 border-section-gray bg-section-gray">
+      <div className="w-[484px] flex flex-col items-center gap-[32px] mx-auto">
         <h3 className="text-black-500 text-[28px] font-medium">
           {t('send us a Message')}
         </h3>

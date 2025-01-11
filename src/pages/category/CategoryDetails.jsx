@@ -17,11 +17,11 @@ const CategoryDetails = () => {
 
   return (
     <div
-      className={`flex flex-col gap-8 ${lang === "ar" && "arabic-font"}`}
+      className={`flex flex-col gap-8 ${lang === "ar" && "arabic-font"} overflow-hidden`}
       dir={lang === "en" ? "ltr" : "rtl"}
     >
       <Header title={mainCategoryDetails?.name} />
-      <div className="flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation3
           prev={{ name: "all categories", link: "/categories" }}
           current={mainCategoryDetails?.name}

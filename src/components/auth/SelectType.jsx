@@ -25,7 +25,7 @@ const SelectType = () => {
     <div className="w-full flex flex-col gap-5">
       <div className="flex gap-5">
         {accountTypes.map((type, index) => (
-          <div key={type.type} className={`size-[174px] flex flex-col gap-4 items-center justify-center ${index === selectedType ? "border-blue-500" : "border-[#D8DFEB]"} rounded-[27px] border border-dashed cursor-pointer`}
+          <div key={type.type} className={`w-1/2 py-8 flex flex-col gap-4 items-center justify-center ${index === selectedType ? "border-blue-500" : "border-[#D8DFEB]"} rounded-[27px] border border-dashed cursor-pointer`}
           onClick={()=>{
             setSelectedType(type.id)
             localStorage.setItem("accType", type.type)
@@ -33,13 +33,13 @@ const SelectType = () => {
           }}
           >
             <img src={type.icon} width={64} height={64} alt="b2c" />
-            <p className="text-xl font-medium">{t(type.name)}</p>
+            <p className="max-md:text-sm text-xl font-medium">{t(type.name)}</p>
           </div>
         ))}
       </div>
       <div>
         <button
-          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
+          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] max-md:text-base text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
           type="submit"
           onClick={handelSelectAccount}
         >

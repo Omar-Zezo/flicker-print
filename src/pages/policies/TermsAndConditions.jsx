@@ -15,7 +15,7 @@ const TermsAndConditions = () => {
       dir={lang === "en" ? "ltr" : "rtl"}
     >
       <Header title="terms And Conditions" />
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation current="terms And Conditions"/>
         <ContentContainer dispatchMethod={getTerms}/>
       </div>

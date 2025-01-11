@@ -12,7 +12,7 @@ const Packages = () => {
       dir={lang === "en" ? "ltr" : "rtl"}
     >
       <Header title={"packages"} />
-      <div className="flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation current={"packages"} />
         <PackagesContainer />
       </div>

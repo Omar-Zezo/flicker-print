@@ -23,6 +23,8 @@ import questions from "./slices/question/questions"
 import packagesHome from "./slices/packages/packagesHome"
 import packages from "./slices/packages/packages"
 import packageDetails from "./slices/packages/packageDetails"
+import countries from "./slices/data/countries"
+import cities from "./slices/data/cities"
 
 
 const store = configureStore({
@@ -50,7 +52,9 @@ const store = configureStore({
         productDetails,
         packagesHome,
         packages,
-        packageDetails
+        packageDetails,
+        countries,
+        cities
     },
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

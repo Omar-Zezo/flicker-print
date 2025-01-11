@@ -17,12 +17,12 @@ const NavbarLogin = ({ langDetection }) => {
   return (
     <>
       <nav
-        className={`container absolute top-0 left-[50%] translate-x-[-50%] z-50 ${
-          langDetection === "ar" && "arabic-font"
+      className={`container py-5 w-full absolute top-0 left-[50%] translate-x-[-50%] z-50 ${
+        langDetection === "ar" && "arabic-font"
         }`}
         dir={langDetection === "en" ? "ltr" : "rtl"}
       >
-        <div className="h-20 flex items-center justify-between">
+        <div className="navbar flex items-center justify-between">
           <div>
             <Link to="/">
               <img width={120} height={20} src={Group14} alt="logo" />

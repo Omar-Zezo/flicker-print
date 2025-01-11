@@ -3,6 +3,7 @@ import { ArrowRightBlue, XBlue } from "@/images/svg";
 const QuestionsCard = ({ question, index, langDetection, isActive, onToggle }) => {
   return (
     <li className="my-3" key={index}>
+      
       <button
         className={`w-full text-left font-medium border-0 ${
           isActive ? "bg-blue-500 text-white" : "bg-section-gray text-black-500"
@@ -14,7 +15,7 @@ const QuestionsCard = ({ question, index, langDetection, isActive, onToggle }) =
         onClick={onToggle}
       >
         <h4
-          className={`text-2xl font-semibold w-full py-[33px] px-5 ${
+          className={`text-2xl max-md:text-sm font-semibold w-full py-[33px] px-5 ${
             langDetection === "en" ? "text-left" : "text-right"
           }`}
         >
@@ -30,14 +31,18 @@ const QuestionsCard = ({ question, index, langDetection, isActive, onToggle }) =
           </div>
         )}
       </button>
+
       <div
-        className={`rounded-bl-[16px] rounded-br-[16px] ${
+        className={`transition-[max-height] duration-300 ease-in-out overflow-hidden ${
+          isActive ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        } rounded-bl-[16px] rounded-br-[16px] ${
           isActive ? "bg-blue-500 text-white" : "bg-section-gray text-black-500"
-        } py-7 px-3 ${isActive ? "block" : "hidden"}`}
+        }`}
+        style={{ maxHeight: isActive ? "500px" : "0px" }}
       >
-        <span>
-          <p className="text-bas font-medium">{question.answer}</p>
-        </span>
+        <div className="py-7 px-3">
+          <p className="text-bas max-md:text-[12px] font-medium">{question.answer}</p>
+        </div>
       </div>
     </li>
   );

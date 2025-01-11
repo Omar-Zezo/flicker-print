@@ -13,17 +13,20 @@ const {products, loaderStatus} = UseFetchSpecialProducts(data, getSpecialProduct
   return (
     <div className={`flex flex-col gap-10 ${products?.length > 0 ? "flex" : "hidden"}`}>
       <div className="flex items-center justify-between">
-        <h2 className={`text-[32px] pb-1 relative text-black-500 font-semibold title-line ${langDetection === "en" ? "after:left-0":"after:right-0"}`}>
+        <h2 className={`text-[32px] max-md:text-base pb-1 relative text-black-500 font-semibold title-line ${langDetection === "en" ? "after:left-0":"after:right-0"}`}>
         {t('special Products')}
         </h2>
-        <div className="w-[220px] h-[56px]">
+        <div>
           <Button
             text={t('view All Products')}
             bg={"bg-blue-500"}
             txtColor={"text-white"}
             link={""}
             arrow={true}
-            txtSize="text-base"
+            txtSize="text-base max-md:text-[10px]"
+            pX="px-5 max-md:px-4"
+            pY="py-4 max-md:py-1"
+            weight="font-500"
           />
         </div>
       </div>

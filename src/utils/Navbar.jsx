@@ -1,35 +1,28 @@
 import { navLinks } from "@/constant";
 import { Group14 } from "@/images/imgs";
 import { Cart } from "@/images/svg";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 import ChangeLang from "@/utils/ChangeLang";
 import { t } from "i18next";
-import UseGetLoggedUser from "@/hooks/UseGetLoggedUser";
-import { toast } from "react-toastify";
 
 const Navbar = ({ langDetection }) => {
-
-  const { isAuth } = UseGetLoggedUser();
-
-  const navigate = useNavigate();
-  const errorMsg = (msg) => toast.error(msg);
 
 
   return (
     <nav
-      className={`container absolute top-0 left-[50%] translate-x-[-50%] z-50 ${
+      className={`container py-5 w-full absolute top-0 left-[50%] translate-x-[-50%] z-50 ${
         langDetection === "ar" && "arabic-font"
       }`}
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
-      <div className="h-20 flex items-center justify-between">
+      <div className="w-full navbar flex items-center justify-between">
         <div>
           <Link to="/">
             <img width={120} height={20} src={Group14} alt="logo" />
           </Link>
         </div>
-        <ul className="flex gap-10">
+        <ul className="flex gap-5 mx-auto">
           {navLinks.map((li) => (
             <li key={li.name}>
               <NavLink
@@ -41,7 +34,7 @@ const Navbar = ({ langDetection }) => {
             </li>
           ))}
         </ul>
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-6 items-center">
           <Link to="/cart">
             <img width={24} height={24} src={Cart} alt="cart" />
           </Link>

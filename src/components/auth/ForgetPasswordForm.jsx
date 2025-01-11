@@ -39,7 +39,7 @@ const ForgetPasswordForm = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="email"
           placeholder={t("email")}
           {...register("email", {
@@ -60,7 +60,7 @@ const ForgetPasswordForm = () => {
       </div>
       <div>
         <button
-          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
+          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl max-md:text-base font-medium text-white bg-blue-500 duration-300 cursor-pointer"
           type="submit"
           disabled={btnLoaderStatus}
         >

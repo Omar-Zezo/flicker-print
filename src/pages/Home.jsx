@@ -15,7 +15,7 @@ const langDetection = UseLangDetection()
   return (
     <div className={`${langDetection === "ar" && "arabic-font"}`} dir={langDetection === "en" ? "ltr" : "rtl"}>
     <HeaderHome langDetection={langDetection}/>
-    <div className="container mx-auto flex flex-col mt-[100px] gap-[100px]">
+    <div className="container flex flex-col mt-[100px] gap-[100px]">
     <CodeTracking langDetection={langDetection}/>
     <SpecialProductsContainer langDetection={langDetection}/>
     <FeaturedCategoriesHome langDetection={langDetection}/>

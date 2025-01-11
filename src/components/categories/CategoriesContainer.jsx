@@ -14,8 +14,8 @@ const CategoriesContainer = () => {
   
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="w-full flex flex-wrap justify-center gap-5 mb-8">
+    <div className="w-full flex flex-col gap-5">
+      <div className="w-[1200px] max-md:w-[352px] mx-auto max-md:gap-[14px] flex flex-wrap gap-5 mb-8">
         {loaderStatus ? (
           <Spiner />
         ) : fetchedData?.length > 0 ? (

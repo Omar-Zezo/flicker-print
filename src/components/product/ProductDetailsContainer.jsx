@@ -10,6 +10,8 @@ import RatingBars from "@/utils/RatingsBar";
 import UserReview from "@/utils/UserReview";
 import SimilarItems from "./SimilarItems";
 import Feedback from "./Feedback";
+import { addToCart } from "@/constant";
+import { toast } from "react-toastify";
 
 const ProductDetailsContainer = ({ langDetection, getProductName }) => {
   const [qty, setQty] = useState(1);
@@ -22,9 +24,12 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
     product,
     loaderStatus,
     photo_gallery,
+    attributes,
   } = UseFetchProductData(getProductName);
 
-  console.log(product);
+  const successMsg = (msg) => toast.success(msg);
+console.log(product)
+
 
   return (
     <div className="container mx-auto flex flex-col gap-20">
@@ -80,83 +85,75 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
               </p>
             </div>
             <div className="flex flex-col gap-2">
-              <div className="flex items-center">
-                <p className="text-black-500 text-xl font-medium">
-                  {t("colors")}:
-                </p>
-                <p
-                  className={`text-base text-black-200 ${
-                    langDetection === "en" ? "ml-2" : "mr-2"
-                  }`}
-                >
-                  Red
-                </p>
-              </div>
-              <div className="flex gap-1">
-                <div className="w-[40px] rounded-full h-[40px] bg-green-500 cursor-pointer"></div>
-                <div className="w-[40px] rounded-full h-[40px] bg-green-500 cursor-pointer"></div>
-                <div className="w-[40px] rounded-full h-[40px] bg-green-500 cursor-pointer"></div>
-                <div className="w-[40px] rounded-full h-[40px] bg-green-500 cursor-pointer"></div>
-                <div className="w-[40px] rounded-full h-[40px] bg-green-500 cursor-pointer"></div>
-                <div className="w-[40px] rounded-full h-[40px] bg-green-500 cursor-pointer"></div>
-              </div>
               <div className="flex flex-col gap-[16px] mt-8">
-                <h3 className="text-black-500 text-xl font-medium">
-                  {t("material")}
-                </h3>
-                <div className="flex flex-col gap-[16px]">
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      id="ceramic"
-                      value={"ceramic"}
-                      name="matrial"
-                      className="size-10 accent-blue-500 cursor-pointer"
-                    />
-                    <label
-                      htmlFor="ceramic"
-                      className="text-black-500 text-base font-medium cursor-pointer"
-                    >
-                      Ceramic
-                    </label>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      id="marble"
-                      value={"marble"}
-                      name="matrial"
-                      className="size-10 accent-blue-500 cursor-pointer"
-                    />
-                    <label
-                      htmlFor="marble"
-                      className="text-black-500 text-base font-medium cursor-pointer"
-                    >
-                      Marble
-                    </label>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-[12px]">
-                  <h3 className="text-black-500 text-xl font-medium">
-                    {t("material")}
-                  </h3>
-                  <div className="rounded-[18px] py-[23px] px-5 bg-[#FBFEFF] relative">
-                    <select className="text-black-400 px-5 size-full bg-transparent cursor-pointer font-medium text-base outline-none border-[#00000033]">
-                      <option className="text-base text-black-400 font-medium">
-                        Ceramic
-                      </option>
-                    </select>
-                    <img
-                      className={`absolute ${
-                        langDetection === "en" ? "right-4" : "left-4"
-                      } top-1/2 z-10 translate-y-[-50%]`}
-                      src={SelectArrow}
-                      alt="arrow"
-                      width={24}
-                      height={24}
-                    />
-                  </div>
-                </div>
+                {attributes?.map((attr, index) => {
+                  if (attr.display_format === "select") {
+                    return (
+                      <div key={index} className="flex flex-col gap-[12px]">
+                        <h3 className="text-black-500 text-xl font-medium capitalize">
+                          {attr?.name}
+                        </h3>
+                        <div className="rounded-[18px] py-[23px] px-5 bg-[#FBFEFF] relative">
+                          <select className="text-black-400 px-5 capitalize size-full bg-transparent cursor-pointer font-medium text-base outline-none border-[#00000033]">
+                            <option
+                              value=""
+                              className="text-base text-black-400 font-medium"
+                            >
+                              {attr?.name}
+                            </option>
+                            {attr?.values.map((val) => (
+                              <option
+                                key={val}
+                                value={val}
+                                className="text-base text-black-400 font-medium"
+                              >
+                                {val}
+                              </option>
+                            ))}
+                          </select>
+                          <img
+                            className={`absolute ${
+                              langDetection === "en" ? "right-4" : "left-4"
+                            } top-1/2 z-10 translate-y-[-50%]`}
+                            src={SelectArrow}
+                            alt="arrow"
+                            width={24}
+                            height={24}
+                          />
+                        </div>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div key={index} className="flex flex-col gap-[16px]">
+                        <h3 className="text-black-500 capitalize text-xl font-medium">
+                          {attr?.name}
+                        </h3>
+                          <form className="flex flex-col gap-[16px]">
+                            {
+                              attr?.values.map(val=>(
+                                <div key={val} className="flex items-center gap-2">
+                                <input
+                                  type="radio"
+                                  id="ceramic"
+                                  name={attr?.name}
+                                  value={val}
+                                  className="size-10 accent-blue-500 cursor-pointer"
+                                />
+                                <label
+                                  htmlFor="ceramic"
+                                  className="text-black-500 text-base capitalize font-medium cursor-pointer"
+                                >
+                                  {val}
+                                </label>
+                              </div>
+                              ))
+                            }
+                          </form>
+                      </div>
+                    );
+                  }
+                })}
                 <div className="flex flex-col gap-[16px]">
                   <div className="flex flex-col gap-2">
                     <div className="flex gap-2 items-center">
@@ -216,7 +213,21 @@ const ProductDetailsContainer = ({ langDetection, getProductName }) => {
                       {t("this price is exclusive of taxes")}
                     </p>
                   </div>
-                  <div className="w-[180px] h-[56px]">
+                  <div className="w-[180px] h-[56px]"
+                  onClick={()=>{
+                    addToCart({
+                      item_id: product.id,
+                      name: product.name,
+                      image: product.image,
+                      price: product.price,
+                      attribute_id: 1,
+                      qty: qty,
+                      type: "product",
+                      is_need_design: product?.is_need_design
+                    })
+                  successMsg(t("product has been added successfully"))
+                  } }
+                  >
                     <Button
                       txtsize="text-base"
                       bg="bg-blue-500"

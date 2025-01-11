@@ -4,6 +4,7 @@ import ProductDetailsContainer from "@/components/product/ProductDetailsContaine
 import Navigation4 from "@/utils/Navigation4";
 import { useState } from "react";
 
+
 const ProductDetails = () => {
   const langDetection = UseLangDetection();
   const [productName, setProductName] = useState()
@@ -11,6 +12,7 @@ const ProductDetails = () => {
   const getProductName = (name) => {
     setProductName(name);
   };
+
 
   return (
     <div
@@ -20,7 +22,7 @@ const ProductDetails = () => {
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
       <Header title="product details"/>
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation4 category={{name : "Mug", id: 1}} current={productName}/>
         <ProductDetailsContainer getProductName={getProductName} langDetection={langDetection}/>
       </div>

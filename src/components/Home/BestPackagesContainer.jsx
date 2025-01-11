@@ -11,10 +11,14 @@ const BestPackagesContainer = ({ langDetection }) => {
   const { fetchedData, loaderStatus } = UseFetchData(data, getPackagesHome);
 
   return (
-    <div className={`flex flex-col gap-10 ${fetchedData?.length > 0 ? "flex" : "hidden"}`}>
+    <div
+      className={`flex flex-col gap-10 ${
+        fetchedData?.length > 0 ? "flex" : "hidden"
+      }`}
+    >
       <div className="flex items-center justify-between">
         <h2
-          className={`text-[32px] pb-1 relative text-black-500 font-semibold title-line ${
+          className={`text-[32px] max-md:text-base pb-1 relative text-black-500 font-semibold title-line ${
             langDetection === "en" ? "after:left-0" : "after:right-0"
           }`}
         >
@@ -22,12 +26,15 @@ const BestPackagesContainer = ({ langDetection }) => {
         </h2>
         <div className="w-[220px] h-[56px]">
           <Button
-            text={t("view All Products")}
+            text={t("view All Packages")}
             bg={"bg-blue-500"}
             txtColor={"text-white"}
             link={""}
             arrow={true}
-            txtSize="text-base"
+            txtSize="text-base max-md:text-[10px]"
+            pX="px-5 max-md:px-4"
+            pY="py-4 max-md:py-1"
+            weight="font-500"
           />
         </div>
       </div>
@@ -35,10 +42,10 @@ const BestPackagesContainer = ({ langDetection }) => {
         {loaderStatus ? (
           <Spiner />
         ) : fetchedData?.length > 0 ? (
-          fetchedData.map((packg) => <PackageCard key={packg.id} packg={packg} />)
-        ) : (
-          null
-        )}
+          fetchedData.map((packg) => (
+            <PackageCard key={packg.id} packg={packg} />
+          ))
+        ) : null}
       </div>
     </div>
   );

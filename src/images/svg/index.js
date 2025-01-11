@@ -47,6 +47,25 @@ import Ellipse4 from "./Ellipse 4.svg";
 import ImgUpload from "./image-upload.svg";
 import WarningImg from "./warning.svg";
 import CouponImg from "./coupon 1.svg";
+import Address from "./address 1.svg";
+import Store from "./store 1.svg";
+import InteriorDesign from "./interior-design (1).svg";
+import Time from "./time 1.svg";
+import Plan from "./plan.svg";
+import Pdf from "./file-pdf.svg";
+import ArrowWave from "./arrow-wave.svg";
+import Check2 from "./check 2.svg";
+import Dashboard from "./dashboard.svg";
+import Group9 from "./Group 9.svg";
+import Flicker from "./Group 14.svg";
+import HomeSettings from "./home-setting 01.svg";
+import Map3 from "./map-03.svg";
+import OpenBox from "./open box 01.svg";
+import Trolley from "./trolley.svg";
+import Trash from "./trash.svg";
+import Trash2 from "./trash 1.svg";
+
+
 
 
 export {
@@ -98,5 +117,22 @@ export {
   Ellipse4,
   ImgUpload,
   WarningImg,
-  CouponImg
+  CouponImg,
+  Address,
+  Store,
+  InteriorDesign,
+  Time,
+  Plan,
+  Pdf,
+  ArrowWave,
+  Check2,
+  Dashboard,
+  Group9,
+  Flicker,
+  HomeSettings,
+  Map3,
+  OpenBox,
+  Trolley,
+  Trash,
+  Trash2
 };

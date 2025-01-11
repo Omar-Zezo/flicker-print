@@ -16,17 +16,24 @@ const ConfirmLogout = ({setConfirmLogout, langDetection}) => {
     };
 
     const navigate = useNavigate()
+
   
     useEffect(() => {
       if (logoutData) {
         if (logoutData.data) {
           if (logoutData.data.status === 200) {
-            localStorage.removeItem("token");
-            window.location.reload()
+            const removeTokenAndReload = new Promise((resolve) => {
+              localStorage.removeItem("token");
+              resolve();
+            });
+            removeTokenAndReload.then(() => {
+              window.location.reload()
+            });
           }
         }
       }
     }, [logoutData]);
+    
 
   return (
     <div className={`size-full fixed top-0 left-0 z-50 bg-black/80 ${

@@ -15,7 +15,7 @@ const CancellationPolicy = () => {
       dir={lang === "en" ? "ltr" : "rtl"}
     >
       <Header title="cancellation Policy" />
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation current="cancellation Policy"/>
         <ContentContainer dispatchMethod={getCancellationPolicy}/>
       </div>

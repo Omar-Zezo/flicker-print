@@ -1,3 +1,4 @@
+import { pathes } from "@/constant";
 import UseGetLoggedUser from "@/hooks/UseGetLoggedUser";
 import UseLangDetection from "@/hooks/UseLangDetection";
 import Footer from "@/utils/Footer";
@@ -15,13 +16,11 @@ const langDetection = UseLangDetection()
 const {isAuth} = UseGetLoggedUser()
 const {pathname} = useLocation()
 
-const pathes = ["/notifications", "/profile", "/cart"]
-
 
   return (
     <ScrollToTop>
       {
-        isAuth ? (
+        localStorage.getItem("token") ? (
           pathes.includes(pathname) ? (
           <NavbarLoginBlack langDetection={langDetection} />
             
@@ -36,7 +35,9 @@ const pathes = ["/notifications", "/profile", "/cart"]
           )
         )
       }
+      <div className="overflow-hidden">
       <Outlet />
+      </div>
       <Footer langDetection={langDetection}/>
       <ToastContainer/>
     </ScrollToTop>

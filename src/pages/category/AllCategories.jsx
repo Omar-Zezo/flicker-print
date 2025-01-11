@@ -10,11 +10,11 @@ const AllCategories = () => {
     <div
       className={`flex flex-col gap-8 ${
         langDetection === "ar" && "arabic-font"
-      }`}
+      } overflow-hidden`}
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
       <Header title="all categories"/>
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation current="all categories"/>
         <CategoriesContainer/>
       </div>

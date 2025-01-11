@@ -20,7 +20,7 @@ const PackagesDetails = () => {
       dir={langDetection === "en" ? "ltr" : "rtl"}
     >
       <Header title="package details"/>
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation3 prev={{name: "best packages", link: "/packages"}} current={packageName}/>
         <PackageDetailsContainer getPackagetName={getPackagetName} langDetection={langDetection}/>
       </div>

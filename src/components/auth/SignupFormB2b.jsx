@@ -52,14 +52,14 @@ const SignupFormB2b = () => {
 
   return (
     <form
-      className="w-full flex flex-col gap-5 mt-10"
+      className="w-full flex flex-col gap-5"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div>
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="text"
           placeholder={t("full name")}
           {...register("name", {
@@ -82,7 +82,7 @@ const SignupFormB2b = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="email"
           placeholder={t("email")}
           {...register("email", {
@@ -116,7 +116,7 @@ const SignupFormB2b = () => {
           render={({ field }) => (
             <PhoneInput
               {...field}
-              className="w-full h-[70px] flex items-center relative pl-8 outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field"
+              className="w-full h-[70px] flex items-center relative pl-8 outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field"
               defaultCountry="eg"
               onChange={(value) => {
                 field.onChange(value);
@@ -143,7 +143,7 @@ const SignupFormB2b = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="text"
           placeholder={t("company name")}
           {...register("company_name", {
@@ -162,7 +162,7 @@ const SignupFormB2b = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="text"
           placeholder={t("commercial License Number")}
           {...register("commercial_license_number", {
@@ -181,7 +181,7 @@ const SignupFormB2b = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="text"
           placeholder={t("issuing Authority")}
           {...register("issuing_authority", {
@@ -210,7 +210,7 @@ const SignupFormB2b = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type={showPassword ? "text" : "password"}
           placeholder={t("password")}
           {...register("password", {
@@ -245,7 +245,7 @@ const SignupFormB2b = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type={showPasswordConfirm ? "text" : "password"}
           placeholder={t("confirm password")}
           {...register("password_confirmation", {
@@ -267,7 +267,7 @@ const SignupFormB2b = () => {
       </div>
       <div className="flex flex-col gap-3">
         <button
-          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
+          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl max-md:text-base font-medium text-white bg-blue-500 duration-300 cursor-pointer"
           type="submit"
           disabled={btnLoaderStatus}
         >

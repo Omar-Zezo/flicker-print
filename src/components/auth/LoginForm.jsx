@@ -41,9 +41,9 @@ const LoginForm = () => {
     >
       <div>
         <input
-          className={`w-full h-[70px] mt-10 ${
+          className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type="email"
           placeholder={t("email")}
           {...register("email", {
@@ -76,7 +76,7 @@ const LoginForm = () => {
         <input
           className={`w-full h-[70px] ${
             langDetection === "en" ? "pl-8" : "pr-8"
-          } outline-none border-black/10 rounded-[18px] text-base text-black-200 bg-field`}
+          } outline-none border-black/10 rounded-[18px] text-base max-md:text-sm text-black-200 bg-field`}
           type={showPassword ? "text" : "password"}
           placeholder={t("password")}
           {...register("password", { required: t("password is required") })}
@@ -90,7 +90,7 @@ const LoginForm = () => {
         </p>
         <Link
           to="/auth/forget-password"
-          className={`block text-sm text-blue-500 text-right ${
+          className={`block text-sm max-md:text-[12px] text-blue-500 text-right ${
             langDetection === "ar" && "pr-6"
           } font-medium hover:underline`}
         >
@@ -99,13 +99,13 @@ const LoginForm = () => {
       </div>
       <div className="flex flex-col gap-3">
         <button
-          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl font-medium text-white bg-blue-500 duration-300 cursor-pointer"
+          className="w-full h-[70px] relative outline-none border-black/10 rounded-[18px] text-xl max-md:text-base font-medium text-white bg-blue-500 duration-300 cursor-pointer"
           type="submit"
           disabled={btnLoaderStatus}
         >
           {btnLoaderStatus ? <BtnLoader /> : t("login")}
         </button>
-        <p className="flex items-center justify-center gap-1 text-sm text-center text-black-500 font-medium">
+        <p className="flex items-center justify-center gap-1 text-sm max-md-text-[12px] text-center text-black-500 font-medium">
           {t("I don't have an account")}
           <Link
             to="/auth/select-account-type"

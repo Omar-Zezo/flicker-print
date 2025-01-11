@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
       dir={lang === "en" ? "ltr" : "rtl"}
     >
       <Header title="privacy Policy" />
-      <div className="container flex flex-col gap-8 mx-auto">
+      <div className="container flex flex-col gap-8">
         <Navigation current="privacy Policy"/>
         <ContentContainer dispatchMethod={getPrivacyPolicy}/>
       </div>

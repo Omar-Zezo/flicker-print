@@ -36,7 +36,7 @@ export default function HSlider() {
       >
         {
           slideImages.map((img, index)=>(
-            <SwiperSlide>
+            <SwiperSlide key={index}>
               <div 
               style={{
                 background: `url('${img.img}')`,
